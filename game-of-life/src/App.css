@@ -49,7 +49,21 @@
 .presets-div{
   border:black solid 2px;
   height: 35vh;
-  padding: .5rem
+  padding: 1rem
+}
+
+.presets-section{
+  display: flex;
+  justify-content: space-around;
+}
+
+.the-presets{
+  text-align: center; 
+  width: 25%; 
+  display: flex ;
+  flex-direction:column;
+  justify-content: center; 
+  align-items: center;
 }
 
 /* this is all the CSS for the rules components */
