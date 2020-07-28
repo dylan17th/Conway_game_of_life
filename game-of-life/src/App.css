@@ -1,0 +1,85 @@
+.main-component{
+  display: flex;
+  flex-wrap: wrap;
+  border: black solid 2px;
+  justify-content: center;
+  height: 110vh;
+}
+
+.title-for-page{
+  width: 100vw;
+  text-align: center;
+  border: black solid 2px;
+  height: 5vh;
+}
+
+/* this is all the CSS for the grid components */
+.grid-components{
+  width: 37vw;
+  border: black solid 2px;
+  padding: 1rem;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.grid-table{
+  display: grid;
+  
+}
+.box{
+  border: black solid 1px;
+  width:15px;
+  height: 15px;
+}
+
+/* this is all the CSS for the presets components */
+.presets-components{
+  width: 55vw;
+  border: black solid 2px;
+  padding: .5rem;
+  height: 67vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.presets-div{
+  border:black solid 2px;
+  height: 35vh;
+  padding: .5rem
+}
+
+/* this is all the CSS for the rules components */
+.rules-components{
+  border: black solid 2px;
+  padding: .5rem;
+  height: 30vh;
+  line-height: 2rem;
+}
+
+
+/* this is all the css for the about algorithm component*/
+
+.about-div{
+  border:black solid 2px;
+  width: 100vw;
+}
+
+.about-title{
+  text-align: center;
+}
+
+/*this section is all the styling for the buttons*/
+
+.buttons-div{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button{
+  padding: .2rem;
+  margin: .2rem;
+}
