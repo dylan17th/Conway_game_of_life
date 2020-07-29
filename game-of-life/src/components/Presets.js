@@ -62,7 +62,7 @@ const Presets = (props) => {
     }
     return (
         <div className="presets-div">
-            <h3>Presets:</h3>
+            <h3 className="presets-title">Presets:</h3>
             <section className="presets-section">
                 <div onClick={() => props.setClickedOnPulsar(true)} className="the-presets">
                     <h4>Pulsar</h4>

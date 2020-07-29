@@ -262,5 +262,32 @@
   .button-select{
     width: 22vw ;
   }
+  .presets-title{
+    display: none;
+  }
+  .presets-div{
+    margin-bottom: 15vh;
+  }
+  .copyright{
+    font-size: .7rem;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .rules-components{
+    font-size: .5rem;
+  }
+  .buttons-div{
+    width:85vw;
+  }
+  .button{
+    width: 22vw ;
+  }
+  .button-select{
+    width: 22vw ;
+  }
+  .rules-components{
+    font-size: .4rem;
+  }
 }
 
