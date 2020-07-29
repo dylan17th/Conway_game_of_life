@@ -20,33 +20,33 @@ const Grid = props => {
     });
     const indexPointsNeeded = [[0, 1], [0, -1], [1, -1], [-1, 1], [1, 1], [-1, -1], [1, 0], [-1, 0]]
     const [numberOfGenerations, setNumberOfGenerations] = useState(0)
-    
-     useEffect(()=>{
-        if (props.clickedOnPulsar){
+
+    useEffect(() => {
+        if (props.clickedOnPulsar) {
             props.setClickedOnPulsar(false)
             setMyGrid(prevState => {
                 return handleMainPulsar(prevState)
             })
         }
-        if (props.clickedOnGlider){
+        if (props.clickedOnGlider) {
             props.setClickedOnGlider(false)
             setMyGrid(prevState => {
                 return handleMainGlider(prevState)
             })
         }
-        if (props.clickedOnBlinker){
+        if (props.clickedOnBlinker) {
             props.setClickedOnBlinker(false)
             setMyGrid(prevState => {
                 return handleMainBlinker(prevState)
             })
         }
-        if (props.clickedOnToad){
+        if (props.clickedOnToad) {
             props.setClickedOnToad(false)
             setMyGrid(prevState => {
                 return handleMainToad(prevState)
             })
         }
-     }, [props.clickedOnPulsar, props.clickedOnGlider, props.clickedOnBlinker, props.clickedOnToad]);
+    }, [props.clickedOnPulsar, props.clickedOnGlider, props.clickedOnBlinker, props.clickedOnToad]);
 
     function findNeighbors() {
         setMyGrid(prevState => {
@@ -92,7 +92,6 @@ const Grid = props => {
         setTimeout(runGame, mySpeed.current) //using recursion and am going to keep running the game every second 
     }, [])
 
-    console.log(myGrid)
     return (
         <>
             <h3>Generations: {numberOfGenerations === 0 ? undefined : numberOfGenerations}</h3>
@@ -106,7 +105,7 @@ const Grid = props => {
                                 return clonedBoard
                             })
                         }
-                    }} key={index + Math.random()} className="box" style={{ backgroundColor: myGrid[index][i] ? "seagreen" : null }}>
+                    }} key={index + Math.random()} className="box" style={{ backgroundColor: myGrid[index][i] ? "#0059b3" : "lightgrey" }}>
                     </div>)))}
             </div>
             <Buttons

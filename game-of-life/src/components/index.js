@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import About from "./About_Algorithm";
 import Presets from './Presets';
 import Grid from './Grid/index';
 import Rules from './Rules';
@@ -36,7 +35,9 @@ const Main = () => {
                     <Rules />
                 </section>
             </section>
-            <About />
+            <div>
+                Copyright {'\u00a9'} Dylan Collins 2020. All rights reserved
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-export const pulsarFunction = (gridRows) =>{
+export const pulsarFunction = (gridRows) => {
     gridRows[1][3] = 1
     gridRows[1][4] = 1
     gridRows[1][5] = 1
@@ -55,7 +55,7 @@ export const handleMainBlinker = (grid) => {
     newGrid[12][11] = 1
     newGrid[12][12] = 1
     newGrid[12][13] = 1
-    return newGrid 
+    return newGrid
 }
 
 export const handleMainToad = (grid) => {
@@ -66,7 +66,7 @@ export const handleMainToad = (grid) => {
     newGrid[11][12] = 1
     newGrid[11][13] = 1
     newGrid[11][14] = 1
-    return newGrid 
+    return newGrid
 }
 
 export const handleMainGlider = (grid) => {
@@ -76,10 +76,10 @@ export const handleMainGlider = (grid) => {
     newGrid[5][5] = 1
     newGrid[5][6] = 1
     newGrid[6][5] = 1
-    return newGrid 
+    return newGrid
 }
 
-export const handleMainPulsar = (grid) =>{
+export const handleMainPulsar = (grid) => {
     const newGrid = grid
     newGrid[2][4] = 1
     newGrid[2][5] = 1
@@ -121,7 +121,7 @@ export const handleMainPulsar = (grid) =>{
     newGrid[14][11] = 1
     newGrid[14][12] = 1
     newGrid[10][7] = 1
-    newGrid[11][8] = 1
+    newGrid[11][7] = 1
     newGrid[12][7] = 1
     newGrid[10][9] = 1
     newGrid[11][9] = 1

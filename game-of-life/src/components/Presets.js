@@ -54,7 +54,7 @@ const Presets = (props) => {
                             height: "9px",
                             width: "9px",
                             border: "solid .5px black",
-                            backgroundColor: startingState[index][i] ? "seagreen" : null
+                            backgroundColor: startingState[index][i] ? "#0059b3" : "lightgrey"
                         }}>
                     </div>)))}
             </div>
@@ -62,7 +62,7 @@ const Presets = (props) => {
     }
     return (
         <div className="presets-div">
-            <h3>Presets</h3>
+            <h3>Presets:</h3>
             <section className="presets-section">
                 <div onClick={() => props.setClickedOnPulsar(true)} className="the-presets">
                     <h4>Pulsar</h4>
