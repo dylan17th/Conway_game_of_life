@@ -1,24 +1,21 @@
 .main-component{
   display: flex;
   flex-wrap: wrap;
-  border: black solid 2px;
   justify-content: center;
-  height: 110vh;
+  height: 100vh;
 }
 
 .title-for-page{
   width: 100vw;
   text-align: center;
-  border: black solid 2px;
   height: 5vh;
 }
 
 /* this is all the CSS for the grid components */
 .grid-components{
   width: 37vw;
-  border: black solid 2px;
   padding: 1rem;
-  height: 65vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,51 +32,96 @@
   height: 15px;
 }
 
+
 /* this is all the CSS for the presets components */
 .presets-components{
   width: 55vw;
-  border: black solid 2px;
   padding: .5rem;
-  height: 67vh;
+  height: 72vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
 .presets-div{
-  border:black solid 2px;
   height: 35vh;
-  padding: .5rem
+  padding: 1rem
+}
+
+.presets-section{
+  display: flex;
+  justify-content: space-around;
+}
+
+.the-presets{
+  text-align: center; 
+  width: 25%; 
+  display: flex ;
+  flex-direction:column;
+  justify-content: center; 
+  align-items: center;
 }
 
 /* this is all the CSS for the rules components */
 .rules-components{
-  border: black solid 2px;
   padding: .5rem;
   height: 30vh;
   line-height: 2rem;
 }
 
 
-/* this is all the css for the about algorithm component*/
-
-.about-div{
-  border:black solid 2px;
-  width: 100vw;
-}
-
-.about-title{
-  text-align: center;
-}
-
 /*this section is all the styling for the buttons*/
 
 .buttons-div{
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  width: 70%;
+}
+
+.main-buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .button{
-  padding: .2rem;
-  margin: .2rem;
+  width: 33%;
+  height: 5vh;
+  text-align: center;
+  border: none;
+  background-image: url('./images/new-background.png');
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px 1.5px 0 #000, 0 -1.5px 0 #000,
+  0 1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 0 0 #000,
+  -1.5px 0 0 #000; 
+  color: white;
+  letter-spacing: .05rem;
+  outline: none;
 }
+
+.button:hover{
+  background: black;
+}
+
+.button-select{
+  width: 8.5vw;
+  height: 5vh;
+  background-image: url('./images/new-background.png');
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px 1.5px 0 #000, 0 -1.5px 0 #000,
+  0 1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 0 0 #000,
+  -1.5px 0 0 #000; 
+  color: white;
+  letter-spacing: .05rem;
+  border: none;
+  text-align-last:center;
+}
+
+.button-select:hover{
+  background: black;
+}
+
+.button:active, 
+.button:focus {
+    border:0.1em solid #0059b3;
+ }

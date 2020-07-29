@@ -12,10 +12,10 @@ const Buttons = props => {
         props.setClickable(true)
     }
     const handleSelect = e => {
-            props.setSpeed({
-                value: e.target.value
-            })
-            props.mySpeed.current = e.target.value
+        props.setSpeed({
+            value: e.target.value
+        })
+        props.mySpeed.current = e.target.value
     }
     const randomGid = () => {
         const gridRows = [];
@@ -29,30 +29,35 @@ const Buttons = props => {
 
     return (
         <div className="buttons-div">
-            <button
-                onClick={() => {
-                    props.setClickable(!props.clickable);
-                    props.isRunning.current = false;
-                    props.runGame();
-                }}
-                className="button">Play</button>
-            <button onClick={() => props.setClickable(true)} className="button">Stop</button>
-            <button className="button" onClick={clearingTheGid}>Clear</button>
-            <button className="button" onClick={randomGid}>Random</button>
-            <button className="button" onClick={() => {
-                if (props.clickable === true) {
-                    props.setOneGeneration(!props.oneGeneration)
-                    props.isOneGeneration.current = !props.isOneGeneration;
-                }
-            }}>{props.oneGeneration === true ? " See all generations" : "See one Generation"}</button>
-            <label>
-                <select className="button" defaultValue={props.speed.value} onChange={handleSelect}>
-                    <option value={1500}>Slow</option>
-                    <option value={1000}>Normal</option>
-                    <option value={500}>Fast</option>
-                    <option value={200}>Super Fast</option>
-                </select>
-            </label>
+            <div className="main-buttons">
+                <button className="button"
+                    onClick={() => {
+                        props.setClickable(!props.clickable);
+                        props.isRunning.current = false;
+                        props.runGame();
+                    }}
+                    className="button">Play</button>
+                <button className="button" onClick={() => props.setClickable(true)} className="button">Stop</button>
+                <button className="button" onClick={clearingTheGid}>Clear</button>
+            </div>
+            <div className="main-buttons">
+                <button className="button" onClick={randomGid}>Random</button>
+                <button className="button" onClick={() => {
+                    if (props.clickable === true) {
+                        props.setOneGeneration(!props.oneGeneration)
+                        props.isOneGeneration.current = !props.isOneGeneration;
+                    }
+                }}>{props.oneGeneration === true ? " See all generations" : "See one Generation"}</button>
+                <label>
+                    <select className="button-select" defaultValue={props.speed.value} onChange={handleSelect}>
+                        <option value={1500}>Slow</option>
+                        <option value={1000}>Normal</option>
+                        <option value={500}>Fast</option>
+                        <option value={200}>Super Fast</option>
+                    </select>
+                </label>
+
+            </div>
         </div>
     )
 }

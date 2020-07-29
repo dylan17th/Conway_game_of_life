@@ -1,14 +1,15 @@
-import React, { useState, useCallback, useRef } from "react";
-import Buttons from "./Buttons"
+import React, { useState, useCallback, useRef, useEffect } from "react";
+import Buttons from "./Buttons";
+import { handleMainBlinker, handleMainToad, handleMainPulsar, handleMainGlider } from '../../helper_function/index';
 
-const Grid = () => {
+const Grid = props => {
     const rows = 25;
     const cols = 25;
     const [clickable, setClickable] = useState(true);
     const isRunning = useRef(clickable);
     const [oneGeneration, setOneGeneration] = useState(false)
     const isOneGeneration = useRef(oneGeneration);
-    const [speed, setSpeed] = useState({value: 1000})
+    const [speed, setSpeed] = useState({ value: 1000 })
     const mySpeed = useRef(speed)
     const [myGrid, setMyGrid] = useState(() => {
         const gridRows = [];
@@ -19,6 +20,33 @@ const Grid = () => {
     });
     const indexPointsNeeded = [[0, 1], [0, -1], [1, -1], [-1, 1], [1, 1], [-1, -1], [1, 0], [-1, 0]]
     const [numberOfGenerations, setNumberOfGenerations] = useState(0)
+
+    useEffect(() => {
+        if (props.clickedOnPulsar) {
+            props.setClickedOnPulsar(false)
+            setMyGrid(prevState => {
+                return handleMainPulsar(prevState)
+            })
+        }
+        if (props.clickedOnGlider) {
+            props.setClickedOnGlider(false)
+            setMyGrid(prevState => {
+                return handleMainGlider(prevState)
+            })
+        }
+        if (props.clickedOnBlinker) {
+            props.setClickedOnBlinker(false)
+            setMyGrid(prevState => {
+                return handleMainBlinker(prevState)
+            })
+        }
+        if (props.clickedOnToad) {
+            props.setClickedOnToad(false)
+            setMyGrid(prevState => {
+                return handleMainToad(prevState)
+            })
+        }
+    }, [props.clickedOnPulsar, props.clickedOnGlider, props.clickedOnBlinker, props.clickedOnToad]);
 
     function findNeighbors() {
         setMyGrid(prevState => {
@@ -63,7 +91,7 @@ const Grid = () => {
         if (isOneGeneration.current) return;
         setTimeout(runGame, mySpeed.current) //using recursion and am going to keep running the game every second 
     }, [])
-    console.log(myGrid)
+
     return (
         <>
             <h3>Generations: {numberOfGenerations === 0 ? undefined : numberOfGenerations}</h3>
@@ -77,7 +105,7 @@ const Grid = () => {
                                 return clonedBoard
                             })
                         }
-                    }} key={index + Math.random()} className="box" style={{ backgroundColor: myGrid[index][i] ? "seagreen" : null }}>
+                    }} key={index + Math.random()} className="box" style={{ backgroundColor: myGrid[index][i] ? "#0059b3" : "lightgrey" }}>
                     </div>)))}
             </div>
             <Buttons
