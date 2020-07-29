@@ -60,6 +60,7 @@
   flex-direction:column;
   justify-content: center; 
   align-items: center;
+  cursor: pointer;
 }
 
 /* this is all the CSS for the rules components */
@@ -87,7 +88,7 @@
 }
 
 .button{
-  width: 33%;
+  width: 8.5vw;
   height: 5vh;
   text-align: center;
   border: none;
@@ -125,3 +126,141 @@
 .button:focus {
     border:0.1em solid #0059b3;
  }
+
+
+ /*start of media queries for responsiveness*/
+
+ @media screen and (max-width: 1200px) {
+  .presets-components{
+    width: 80vw;
+  }
+  .buttons-div{
+    width: 100%;
+  }
+  .copyright{
+    padding-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .buttons-div{
+    width: 36vw;
+  }
+  .button{
+    width: 12vw ;
+  }
+  .button-select{
+    width: 12vw ;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .buttons-div{
+    width: 40vw;
+  }
+  .button{
+    width: 13vw ;
+  }
+  .button-select{
+    width: 13vw ;
+  }
+  .rules-components{
+    padding: .5rem;
+    height: 40vh;
+    line-height: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 820px) {
+  .buttons-div{
+    width: 47vw;
+  }
+  .button{
+    width: 16vw ;
+  }
+  .button-select{
+    width: 16vw ;
+  }
+  .rules-components{
+    padding: .5rem;
+    height: 40vh;
+    line-height: 2rem;
+  }
+  .rules-components{
+    padding: .5rem;
+    font-size: .8rem;
+    width: 95%;
+  }
+  .presets-components{
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .buttons-div{
+    width: 55vw;
+  }
+  .button{
+    width: 17vw ;
+  }
+  .button-select{
+    width: 17vw ;
+  }
+
+  .presets-components{
+    width: 92vw;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .buttons-div{
+    width: 57vw;
+  }
+  .button{
+    width: 19vw ;
+  }
+  .button-select{
+    width: 19vw ;
+  }
+  .presets-components{
+    width: 92vw;
+    height: 80vh;
+  }
+  .presets-section{
+    flex-wrap: wrap;
+
+  }
+  .the-presets{
+    width:40%;
+  }
+  .presets-div{
+    height: 40vh;
+    margin-bottom: 20vh;
+  }
+  .copyright{
+    padding-top: 10vh;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .rules-components{
+    font-size: .6rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .rules-components{
+    font-size: .5rem;
+  }
+  .buttons-div{
+    width:85vw;
+  }
+  .button{
+    width: 22vw ;
+  }
+  .button-select{
+    width: 22vw ;
+  }
+}
+
