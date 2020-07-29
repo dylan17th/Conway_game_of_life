@@ -35,7 +35,7 @@ const Main = () => {
                     <Rules />
                 </section>
             </section>
-            <div>
+            <div className="copyright">
                 Copyright {'\u00a9'} Dylan Collins 2020. All rights reserved
             </div>
         </div>
