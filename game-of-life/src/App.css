@@ -287,7 +287,10 @@
     width: 22vw ;
   }
   .rules-components{
-    font-size: .4rem;
+    font-size: .3rem;
+  }
+  .presets-div{
+    margin-top: 7vh;
   }
 }
 
