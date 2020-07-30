@@ -1,5 +1,5 @@
 import React from "react";
-import { pulsarFunction, handleIteration, loophandler } from "../helper_function"
+import { pulsarFunction, handleIteration, loophandler } from "../../helper_function/index"
 
 const Presets = ({ setClickedOnPulsar, setClickedOnGlider, setClickedOnToad, setClickedOnBlinker }) => {
     const pulsar = () => {

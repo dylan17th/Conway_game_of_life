@@ -1,3 +1,5 @@
+import background from '../images/new-background.png';
+
 //functions used in the presets components
 export const pulsarFunction = (gridRows) => {
     const rowCols = [[1, 3], [1, 4], [1, 5], [1, 9], [1, 10], [1, 11], [3, 6], [4, 6], [5, 6], [3, 1],
@@ -91,3 +93,21 @@ export const generations = (clickable, setOneGeneration, isOneGeneration, oneGen
         isOneGeneration.current = !isOneGeneration;
     }
 }
+
+//const used to style to modal
+export const customStyles = {
+    content : {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      width: "70%",
+      height: "35%",
+      backgroundImage: `url(${background})`,
+      borderRadius: "10px",
+      lineHeight: "2rem",
+
+    }
+  };

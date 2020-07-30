@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import Buttons from "./Buttons";
+import Presets from './Presets'
 import { handleMainBlinker, handleMainToad, handleMainPulsar, handleMainGlider, gridMaker, settingState, handlingIndexCheck, EffectHookHelper } from '../../helper_function/index';
 
-const Grid = ({ clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClickedOnGlider, clickedOnBlinker, setClickedOnBlinker, clickedOnToad, setClickedOnToad }) => {
+const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClickedOnGlider, clickedOnBlinker, setClickedOnBlinker, clickedOnToad, setClickedOnToad }) => {
     const rows = 25;
     const cols = 25;
     const [clickable, setClickable] = useState(true);
@@ -53,34 +54,47 @@ const Grid = ({ clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClicked
     }, [findNeighbors])
 
     return (
-        <>
-            <h3>Generations: {numberOfGenerations === 0 ? undefined : numberOfGenerations}</h3>
-            <div className="grid-table" style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, 15px)` }}>
-                {myGrid.map((rows, index) => rows.map((column, i) =>
-                    (<div
-                        onClick={() => settingState(clickable, setMyGrid, index, i)}
-                        key={index + Math.random()}
-                        className="box"
-                        style={{ backgroundColor: myGrid[index][i] ? "#0059b3" : "lightgrey" }}>
-                    </div>)))}
+        <> 
+            <div className='grid-title'>
+                <h3>Generations: {numberOfGenerations === 0 ? undefined : numberOfGenerations}</h3>
+                <div className="grid-table" style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, 22px)` }}>
+                    {myGrid.map((rows, index) => rows.map((column, i) =>
+                        (<div
+                            onClick={() => settingState(clickable, setMyGrid, index, i)}
+                            key={index + Math.random()}
+                            className="box"
+                            style={{ backgroundColor: myGrid[index][i] ? "#0059b3" : "lightgrey" }}>
+                        </div>)))}
+                </div>
             </div>
-            <Buttons
-                setClickable={setClickable}
-                runGame={runGame}
-                isRunning={isRunning}
-                clickable={clickable}
-                myGrid={myGrid}
-                setMyGrid={setMyGrid}
-                row={rows}
-                cols={cols}
-                oneGeneration={oneGeneration}
-                setOneGeneration={setOneGeneration}
-                setNumberOfGenerations={setNumberOfGenerations}
-                isOneGeneration={isOneGeneration}
-                setSpeed={setSpeed}
-                speed={speed}
-                mySpeed={mySpeed}
-            />
+            <div className="component-holder">
+                <section className="presets-components">
+                    <Presets
+                        setClickedOnPulsar={setClickedOnPulsar}
+                        setClickedOnGlider={setClickedOnGlider}
+                        setClickedOnBlinker={setClickedOnBlinker}
+                        setClickedOnToad={setClickedOnToad}
+                    /> 
+                </section>  
+                <Buttons
+                    setClickable={setClickable}
+                    runGame={runGame}
+                    isRunning={isRunning}
+                    clickable={clickable}
+                    myGrid={myGrid}
+                    setMyGrid={setMyGrid}
+                    row={rows}
+                    cols={cols}
+                    oneGeneration={oneGeneration}
+                    setOneGeneration={setOneGeneration}
+                    setNumberOfGenerations={setNumberOfGenerations}
+                    isOneGeneration={isOneGeneration}
+                    setSpeed={setSpeed}
+                    speed={speed}
+                    mySpeed={mySpeed}
+                    openModal={openModal}
+                />
+            </div>
         </>
     )
 }
