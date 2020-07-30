@@ -1,15 +1,12 @@
 import React from "react";
+import { gridMaker, generations } from '../../helper_function/index'
 
 const Buttons = props => {
 
     const clearingTheGid = () => {
-        const gridRows = [];
-        for (let i = 0; i < props.row; i++) {
-            gridRows.push(Array.from(Array(props.cols), () => 0)) //filling the whole grid with zeros
-        }
         props.setNumberOfGenerations(0)
-        props.setMyGrid(gridRows)
         props.setClickable(true)
+        props.setMyGrid(gridMaker(() => 0, props.row, props.cols))
     }
     const handleSelect = e => {
         props.setSpeed({
@@ -18,13 +15,9 @@ const Buttons = props => {
         props.mySpeed.current = e.target.value
     }
     const randomGid = () => {
-        const gridRows = [];
-        for (let i = 0; i < props.row; i++) {
-            gridRows.push(Array.from(Array(props.cols), () => Math.random() > .8 ? 1 : 0))
-        }
         props.setNumberOfGenerations(0)
-        props.setMyGrid(gridRows)
         props.setClickable(true)
+        props.setMyGrid(gridMaker(() => Math.random() > .8 ? 1 : 0, props.row, props.cols))
     }
 
     return (
@@ -32,22 +25,18 @@ const Buttons = props => {
             <div className="main-buttons">
                 <button className="button"
                     onClick={() => {
-                        props.setClickable(!props.clickable);
+                        props.setClickable(false);
                         props.isRunning.current = false;
                         props.runGame();
                     }}
-                    className="button">Play</button>
-                <button className="button" onClick={() => props.setClickable(true)} className="button">Stop</button>
+                >Play</button>
+                <button className="button" onClick={() => props.setClickable(true)}>Stop</button>
                 <button className="button" onClick={clearingTheGid}>Clear</button>
             </div>
             <div className="main-buttons">
                 <button className="button" onClick={randomGid}>Random</button>
-                <button className="button" onClick={() => {
-                    if (props.clickable === true) {
-                        props.setOneGeneration(!props.oneGeneration)
-                        props.isOneGeneration.current = !props.isOneGeneration;
-                    }
-                }}>{props.oneGeneration === true ? " See all generations" : "See one Generation"}</button>
+                <button className="button" onClick={() => generations(props.clickable, props.setOneGeneration, props.isOneGeneration, props.oneGeneration)
+                }>{props.oneGeneration === true ? " See all generations" : "See one Generation"}</button>
                 <label>
                     <select className="button-select" defaultValue={props.speed.value} onChange={handleSelect}>
                         <option value={1500}>Slow</option>

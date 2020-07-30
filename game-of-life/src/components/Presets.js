@@ -1,49 +1,23 @@
-import React, { useState } from "react";
-import { pulsarFunction } from "../helper_function"
+import React from "react";
+import { pulsarFunction, handleIteration, loophandler } from "../helper_function"
 
-const Presets = (props) => {
-    const [pulsar, setPulsar] = useState(() => {
-        const gridRows = [];
-        for (let i = 0; i < 15; i++) {
-            gridRows.push(Array.from(Array(15), () => 0))
-        }
-        return pulsarFunction(gridRows)
-    })
-    const [glider, setGlider] = useState(() => {
-        const gridRows = [];
-        for (let i = 0; i < 15; i++) {
-            gridRows.push(Array.from(Array(15), () => 0)) //filling the whole grid with zeros
-        }
-        gridRows[2][2] = 1
-        gridRows[2][4] = 1
-        gridRows[3][3] = 1
-        gridRows[3][4] = 1
-        gridRows[4][3] = 1
-        return gridRows
-    })
-    const [toad, setToad] = useState(() => {
-        const gridRows = [];
-        for (let i = 0; i < 15; i++) {
-            gridRows.push(Array.from(Array(15), () => 0))
-        }
-        gridRows[7][6] = 1
-        gridRows[7][7] = 1
-        gridRows[7][8] = 1
-        gridRows[8][5] = 1
-        gridRows[8][6] = 1
-        gridRows[8][7] = 1
-        return gridRows
-    })
-    const [blinker, setBlinker] = useState(() => {
-        const gridRows = [];
-        for (let i = 0; i < 15; i++) {
-            gridRows.push(Array.from(Array(15), () => 0))
-        }
-        gridRows[7][6] = 1
-        gridRows[7][7] = 1
-        gridRows[7][8] = 1
-        return gridRows
-    })
+const Presets = ({ setClickedOnPulsar, setClickedOnGlider, setClickedOnToad, setClickedOnBlinker }) => {
+    const pulsar = () => {
+        const newGrid = loophandler()
+        return pulsarFunction(newGrid)
+    }
+    const glider = () => {
+        const rowCols = [[2, 2], [2, 4], [3, 3], [3, 4], [4, 3]]
+        return handleIteration(rowCols, loophandler())
+    }
+    const toad = () => {
+        const rowCols = [[7, 6], [7, 7], [7, 8], [8, 5], [8, 6], [8, 7]]
+        return handleIteration(rowCols, loophandler())
+    }
+    const blinker = () => {
+        const rowCols = [[7, 6], [7, 7], [7, 8]]
+        return handleIteration(rowCols, loophandler())
+    }
     const displayer = (startingState) => {
         return (
             <div style={{ display: "grid", gridTemplateColumns: `repeat(${15}, 9px)` }}>
@@ -64,21 +38,21 @@ const Presets = (props) => {
         <div className="presets-div">
             <h3 className="presets-title">Presets:</h3>
             <section className="presets-section">
-                <div onClick={() => props.setClickedOnPulsar(true)} className="the-presets">
+                <div onClick={() => setClickedOnPulsar(true)} className="the-presets">
                     <h4>Pulsar</h4>
-                    {displayer(pulsar)}
+                    {displayer(pulsar())}
                 </div>
-                <div onClick={() => props.setClickedOnGlider(true)} className="the-presets">
+                <div onClick={() => setClickedOnGlider(true)} className="the-presets">
                     <h4>Glider</h4>
-                    {displayer(glider)}
+                    {displayer(glider())}
                 </div>
-                <div onClick={() => props.setClickedOnToad(true)} className="the-presets">
+                <div onClick={() => setClickedOnToad(true)} className="the-presets">
                     <h4>Toad</h4>
-                    {displayer(toad)}
+                    {displayer(toad())}
                 </div>
-                <div onClick={() => props.setClickedOnBlinker(true)} className="the-presets">
+                <div onClick={() => setClickedOnBlinker(true)} className="the-presets">
                     <h4>Blinker</h4>
-                    {displayer(blinker)}
+                    {displayer(blinker())}
                 </div>
             </section>
         </div>
