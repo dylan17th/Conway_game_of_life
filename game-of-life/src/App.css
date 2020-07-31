@@ -218,6 +218,7 @@
 @media screen and (max-width: 600px) {
   .component-holder{
     height: 110vh;
+    border: none;
   }
   .presets-components{
     width: 97%;
@@ -234,12 +235,18 @@
   }
   .box{
     border: black solid 1px;
-    width:17px;
-    height: 15px;
+    width:14px;
+    height: 14px;
   }
   .grid-table{
     display: grid;
-    grid-template-columns: repeat(25, 17px) 
+    grid-template-columns: repeat(25, 14px) 
+  }
+  .copyright{
+    font-size: .5rem;
+  }
+  .button-select{
+    width: 31vw;
   }
 }
 
