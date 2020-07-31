@@ -147,7 +147,10 @@
   -1.5px 0 0 #000; 
   color: white;
   letter-spacing: .1rem;
-  text-align-last:center;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
   font-size: 1rem;
 }
 
