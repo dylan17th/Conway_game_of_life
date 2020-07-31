@@ -247,10 +247,14 @@
   }
   .button-select{
     width: 31vw;
+    height: 6vh;
   }
   .buttons-div{
     border: black solid 1px;
     border-radius: 10px;
+  }
+  .button{
+    height: 6vh;
   }
 }
 
