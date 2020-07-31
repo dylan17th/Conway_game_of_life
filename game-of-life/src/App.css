@@ -217,11 +217,11 @@
 
 @media screen and (max-width: 600px) {
   .component-holder{
-    height: 110vh;
+    height: 100vh;
     border: none;
   }
   .presets-components{
-    width: 97%;
+    width: 100%;
   }
   .buttons-div{
     width: 97%;
@@ -231,7 +231,7 @@
   }
   .grid-components{
     width: 80vw;
-    height: 170vh;
+    height: 165vh;
   }
   .box{
     border: black solid 1px;
@@ -247,6 +247,13 @@
   }
   .button-select{
     width: 31vw;
+  }
+  .buttons-div{
+    border: black solid 1px;
+    border-radius: 10px;
+  }
+  .button{
+    padding: .2rem;
   }
 }
 

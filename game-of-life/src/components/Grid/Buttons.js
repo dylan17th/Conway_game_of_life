@@ -33,7 +33,7 @@ const Buttons = props => {
             <button className="button" onClick={clearingTheGid}>Clear</button>
             <button className="button" onClick={randomGid}>Random</button>
             <button className="button" onClick={() => generations(props.clickable, props.setOneGeneration, props.isOneGeneration, props.oneGeneration)
-            }>{props.oneGeneration === true ? " See all generations" : "See one generation"}</button>
+            }>{props.oneGeneration === true ? " All generations" : "One generation"}</button>
             <label>
                 <select className="button-select" defaultValue={props.speed.value} onChange={handleSelect}>
                     <option value={1500}>Slow</option>
