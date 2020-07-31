@@ -57,7 +57,7 @@ const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider,
         <> 
             <div className='grid-title'>
                 <h3>Generations: {numberOfGenerations === 0 ? undefined : numberOfGenerations}</h3>
-                <div className="grid-table" style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, 22px)` }}>
+                <div className="grid-table">
                     {myGrid.map((rows, index) => rows.map((column, i) =>
                         (<div
                             onClick={() => settingState(clickable, setMyGrid, index, i)}
