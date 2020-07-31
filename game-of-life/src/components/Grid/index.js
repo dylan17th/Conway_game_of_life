@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import Buttons from "./Buttons";
 import Presets from './Presets'
-import { handleMainBlinker, handleMainToad, handleMainPulsar, handleMainGlider, gridMaker, settingState, handlingIndexCheck, EffectHookHelper } from '../../helper_function/index';
+import { handleMainBlinker, handleMainToad, handleMainPulsar, handleMainGlider, gridMaker, settingState, handlingIndexCheck, effectHookHelper } from '../../helper_function/index';
 
 const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClickedOnGlider, clickedOnBlinker, setClickedOnBlinker, clickedOnToad, setClickedOnToad }) => {
     const rows = 25;
@@ -17,10 +17,10 @@ const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider,
     const [numberOfGenerations, setNumberOfGenerations] = useState(0)
 
     useEffect(() => {
-        EffectHookHelper(clickedOnPulsar, setClickedOnPulsar, setMyGrid, handleMainPulsar)
-        EffectHookHelper(clickedOnGlider, setClickedOnGlider, setMyGrid, handleMainGlider)
-        EffectHookHelper(clickedOnBlinker, setClickedOnBlinker, setMyGrid, handleMainBlinker)
-        EffectHookHelper(clickedOnToad, setClickedOnToad, setMyGrid, handleMainToad)
+        effectHookHelper(clickedOnPulsar, setClickedOnPulsar, setMyGrid, handleMainPulsar)
+        effectHookHelper(clickedOnGlider, setClickedOnGlider, setMyGrid, handleMainGlider)
+        effectHookHelper(clickedOnBlinker, setClickedOnBlinker, setMyGrid, handleMainBlinker)
+        effectHookHelper(clickedOnToad, setClickedOnToad, setMyGrid, handleMainToad)
     }, [clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClickedOnGlider, clickedOnBlinker, setClickedOnBlinker, clickedOnToad, setClickedOnToad]);
 
     const findNeighbors = useCallback(() => {

@@ -77,7 +77,7 @@ export const handlingIndexCheck = (indexPointsNeeded, prevState, i, j, rows, col
     })
     return neighbors
 }
-export const EffectHookHelper = (clickedOn, setClickedOn, stateOfGrid, callbackFunction) => {
+export const effectHookHelper = (clickedOn, setClickedOn, stateOfGrid, callbackFunction) => {
     if (clickedOn) {
         setClickedOn(false)
         stateOfGrid(prevState => {
