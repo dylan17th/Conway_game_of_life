@@ -42,7 +42,7 @@ const Buttons = props => {
                     <option value={200}>Super Fast</option>
                 </select>
             </label>
-            <button onClick={()=> props.openModal()}className="rules">Rules</button>
+            <button onClick={() => props.openModal()} className="rules">Rules</button>
         </div>
     )
 }

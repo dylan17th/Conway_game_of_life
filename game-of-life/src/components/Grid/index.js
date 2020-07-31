@@ -3,7 +3,7 @@ import Buttons from "./Buttons";
 import Presets from './Presets'
 import { handleMainBlinker, handleMainToad, handleMainPulsar, handleMainGlider, gridMaker, settingState, handlingIndexCheck, effectHookHelper } from '../../helper_function/index';
 
-const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClickedOnGlider, clickedOnBlinker, setClickedOnBlinker, clickedOnToad, setClickedOnToad }) => {
+const Grid = ({ openModal, clickedOnPulsar, setClickedOnPulsar, clickedOnGlider, setClickedOnGlider, clickedOnBlinker, setClickedOnBlinker, clickedOnToad, setClickedOnToad }) => {
     const rows = 25;
     const cols = 25;
     const [clickable, setClickable] = useState(true);
@@ -54,7 +54,7 @@ const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider,
     }, [findNeighbors])
 
     return (
-        <> 
+        <>
             <div className='grid-title'>
                 <h3>Generations: {numberOfGenerations === 0 ? undefined : numberOfGenerations}</h3>
                 <div className="grid-table">
@@ -74,8 +74,8 @@ const Grid = ({ openModal ,clickedOnPulsar, setClickedOnPulsar, clickedOnGlider,
                         setClickedOnGlider={setClickedOnGlider}
                         setClickedOnBlinker={setClickedOnBlinker}
                         setClickedOnToad={setClickedOnToad}
-                    /> 
-                </section>  
+                    />
+                </section>
                 <Buttons
                     setClickable={setClickable}
                     runGame={runGame}
