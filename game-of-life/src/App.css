@@ -248,6 +248,7 @@
   .button-select{
     width: 31vw;
     height: 6vh;
+    text-align-last:center;
   }
   .buttons-div{
     border: black solid 1px;
@@ -256,6 +257,7 @@
   .button{
     height: 6vh;
   }
+  
 }
 
 
