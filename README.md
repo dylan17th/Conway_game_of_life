@@ -15,7 +15,7 @@ Conway’s Game of Life is a cellular automated zero player game. The progressio
 - Deployment link: https://conway-game-of-life.dylan17th.vercel.app/
 - The current repo and deployment of Conway's Game of Life is my final iteration and I will not be working on it anymore.
 
-### Tech/Frameworks/libraries used
+### Tech/libraries used
 - React
 - Javascript
 - Vercel
