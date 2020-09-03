@@ -1,3 +1,26 @@
+## Conway's Game of Life
+
+### Project Description
+Conway’s Game of Life is a cellular automated zero player game. The progression of the game is determined by the initial state, which is set by the user. All cells have two possible states, alive or dead. Visit the website to see the algorithm's rules and play (See status section for deployment link).
+
+### Functionality
+ - Random cell generation
+ - Ablity to view one generation at a time
+ - Adjustable speed
+ - Abilty to select cells on grid for a custom cell pattern
+ - Clickable presets that populate for the user
+ - Modal that displays rules for user
+
+### Status
+- Deployment link: https://conway-game-of-life.dylan17th.vercel.app/
+- The current repo and deployment of Conway's Game of Life is my final iteration and I will not be working on it anymore.
+
+### Tech/Frameworks/libraries used
+- React
+- Javascript
+- Vercel
+- CSS
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
